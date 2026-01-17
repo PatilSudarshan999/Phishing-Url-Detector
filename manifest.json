@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Detector Gemini",
+    "version": "1.0",
+    "description": "Detect phishing URLs using Gemini API and Safe Browsing.",
+    "permissions": [
+        "storage",
+        "notifications",
+        "tabs",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "<all_urls>",
+        "https://safebrowsing.googleapis.com/*",
+        "https://generativelanguage.googleapis.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "icons": {
+        "48": "icon.png"
+    }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Phishing Warning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            color: #eee;
+        }
+        
+        .card {
+            max-width: 820px;
+            width: 90%;
+            background: #1b1b1b;
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        
+        h1 {
+            margin: 0 0 8px 0;
+            color: #ff6b6b;
+        }
+        
+        p {
+            margin: 8px 0 16px 0;
+            color: #ddd;
+        }
+        
+        .meta {
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        
+        .info {
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 16px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        
+        button {
+            padding: 10px 14px;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn-safe {
+            background: #2e7d32;
+            color: white;
+        }
+        
+        .btn-leave {
+            background: #b71c1c;
+            color: white;
+        }
+        
+        .btn-open {
+            background: #cfd8dc;
+            color: #111;
+        }
+        
+        .small {
+            font-size: 13px;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>⚠️ Suspicious / Phishing Site Detected</h1>
+
+        <!-- Meta info about domain -->
+        <div class="meta" id="meta">Checking details…</div>
+
+        <!-- AI Explanation / Confidence -->
+        <div class="info">
+            Reason: <span id="reason">—</span><br> AI Confidence: <span id="confidence">—</span>
+        </div>
+
+        <p>This site was flagged as suspicious. It's recommended you do not proceed without caution.</p>
+
+        <div class="buttons">
+            <button class="btn-leave" id="back">Go back to safety</button>
+            <button class="btn-open" id="open">Open anyway</button>
+            <button class="btn-safe" id="report">Report as safe</button>
+        </div>
+
+        <div class="small">Original URL: <span id="orig">—</span></div>
+    </div>
+
+    <!-- load script from file to satisfy CSP -->
+    <script src="warning.js"></script>
+</body>
+
+</html>

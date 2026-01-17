@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Phishing Detector</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+        body {
+            font-family: Arial;
+            width: 360px;
+            padding: 12px;
+            background: #0f1720;
+            color: #e6eef5;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        
+        textarea,
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 6px;
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        
+        .row {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .muted {
+            font-size: 12px;
+            color: #9aa;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Phishing Detector — Settings</h3>
+    <label>Phishing list (one host per line)</label>
+    <textarea id="phishList" rows="4" placeholder="bad-example.com"></textarea>
+    <label>Whitelist (one host per line)</label>
+    <textarea id="whiteList" rows="3" placeholder="example.com"></textarea>
+    <div class="row">
+        <button id="saveBtn">Save Settings</button>
+        <button id="refreshBtn">Refresh</button>
+    </div>
+    <div class="muted">Use the manual check area to test any URL with the current settings.</div>
+    <label style="margin-top:10px">Manual check URL</label>
+    <input id="manualUrl" type="text" placeholder="https://login.example.com" />
+    <div class="row">
+        <button id="checkBtn">Check</button>
+        <div id="checkResult" style="align-self:center;margin-left:6px"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
